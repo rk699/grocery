@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+
+
+   {% block head %}
+<link  rel="stylesheet" href="../static/css/admin.css">
+
+ {% endblock %}
+
+
+
+{% block body %}
+
+    <section class="container-fluid m-auto">
+        <ul class="nav nav-tabs " id="myTab" role="tablist">
+             <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="allproduct-tab" data-bs-toggle="tab" data-bs-target="#allproduct" type="button" role="tab" aria-controls="allproduct" aria-selected="true">All Products</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#addproduct" type="button" role="tab" aria-controls="addproduct" aria-selected="false">Add Product</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Feedbacks</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="customer-tab" data-bs-toggle="tab" data-bs-target="#allcustomer" type="button" role="tab" aria-controls="allcustomer" aria-selected="false">All Customers </button>
+            </li>
+          </ul>
+ 
+          <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show-active m-3" id="allproduct" role="tabpanel" aria-labelledby="allproduct-tab">
+                 <!-- <a href="/admin"> -->
+                <table class="table table-dark ">
+
+                      <thead>
+                        <tr>
+
+                         <th scope="col">Product_id</th>
+                         <th scope="col">P_Name</th>
+                         <th scope="col">Price</th>
+                         <th scope="col">Quantity</th>
+                         <th scope="col">Category</th>
+                         <th scope="col">Description</th>
+                         <th scope="col">P_Image</th>
+                         <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+
+                    <tbody>
+
+                    {% for product in products %}
+
+                     <tr>
+<!--                         <th scope="row">1</th>-->
+                         <td>{{product.product_id}}</td>
+                         <td>{{product.product_name}}</td>
+                         <td>Rs: {{product.product_price}}</td>
+                         <td>{{product.product_qty}}</td>
+                         <td>{{product.category_id}}</td>
+                         <td>{{product.product_desp[0:13]}}</td>
+                         <td>{{product.product_img}}</td>
+                         <td><a href="/update/{{product.product_id}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{product.product_id}}">Edit</a>
+                            <a href="/delete/{{product.product_id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure?')">Delete</a>
+                        </td>
+                     </tr>
+
+                    {% endfor %}
+
+                 </tbody>
+                </table>
+                <!-- </a> -->
+            </div>
+        
+            <div class="tab-pane fade m-3 " id="addproduct" role="tabpanel" aria-labelledby="home-tab">
+              <form action="/admin" method="post" enctype="multipart/form-data">
+                <div class="row ">
+
+                    <div class="col-md-1">
+
+                    </div>
+                    <div class="col-md-6">
+                      <label  for="inputproductpic" class="form-label" >Upload Image</label>
+                      <input type="file" class="form-control" name="img" id="inputproductpic">
+                    </div>
+                </div>  
+                <div class="row ">
+                    <div class="col-md-3">
+                      <label  for="inputproductname" class="form-label">Product Name</label>
+                      <input type="text" class="form-control" name="p_name" id="inputproductname">
+                    </div>
+                </div>  
+                <div class="row ">
+                    <div class="col-md-3">
+                      <label  for="inputproductprice" class="form-label">Product Price</label>
+                      <input type="number" class="form-control" name="p_price" id="inputproductprice">
+                    </div>
+                    <div class="col-md-1">
+                      
+                    </div>
+                    <div class="col-md-6">
+                      <label  for="inputproductdes" class="form-label">Description</label>
+                      <textarea   class="form-control" name="p_desc" id="inputproductdes" cols="40" rows="2"></textarea>
+                    </div>
+                </div>  
+                <div class="row ">
+                    <div class="col-md-3">
+                      <label  for="inputproductqty" class="form-label">Enter Quantity</label>
+                      <input type="text" class="form-control" name="p_qty" id="inputproductqty">
+                    </div>
+                </div>  
+                <div class="row ">
+                    <div class="col-md-3">
+                      <label  for="inputproductcategory" class="form-label">Category</label>
+                      <input type="text" class="form-control" name="p_category" id="inputproductcategory">
+                    </div>
+                </div>  
+                    
+                 
+                    <div class="col-12 m-auto text-center m-4">
+                      <button type="submit" class="btn btn-primary ">Add Product</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="tab-pane fade m-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+              <table class="table table-dark ">
+
+                <thead>
+                  <tr>
+
+                   <th scope="col">Feedback_id</th>
+                   <th scope="col">Customer_id</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">Description</th>
+                   <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {% for feed in feedback %}
+
+                   <tr>
+
+                       <td>{{feed.feedback_id}}</td>                                              
+                       <td>{{feed.cus_id}}</td>
+                       <td>{{feed.feedback_name}}</td>                       
+                       <td>{{feed.feedback_email}}</td>
+                       <td>{{feed.feedback_desp[0:15]}}</td>                      
+                       <td><a href="/update/{{feed.feedback_id}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{feed.feedback_id}}">Edit</a>
+                          <a href="/delete/{{feed.feedback_id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure?')">Delete</a>
+                      </td>
+                   </tr>
+
+                  {% endfor %}
+
+               </tbody>
+              </table>
+
+
+            </div>
+
+            <div class="tab-pane fade m-3" id="allcustomer" role="tabpanel" aria-labelledby="customer-tab">
+
+              <table class="table table-dark ">
+
+                <thead>
+                  <tr>
+                   
+                   <th scope="col">Customer_id</th>
+                   <th scope="col">FirstName</th>
+                   <th scope="col">LastName</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">Mobile</th>
+                   <th scope="col">Address</th>
+                   <th scope="col">Pincode</th>
+                   <th scope="col">City</th>
+                   <th scope="col">State</th>
+                   <th scope="col">Image</th>
+                   <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {% for cus in customer %}
+
+                   <tr>
+
+                       <td>{{cus.cus_id}}</td>                                              
+                       <td>{{cus.first_name}}</td>
+                       <td>{{cus.last_name}}</td>                       
+                       <td>{{cus.cus_email}}</td>
+                       <td>{{cus.cus_mobile}}</td>                      
+                       <td>{{cus.address}}</td>                      
+                       <td>{{cus.pincode}}</td>                      
+                       <td>{{cus.city}}</td>                      
+                       <td>{{cus.state}}</td>                      
+                       <td>{{cus.cus_img}}</td>                      
+                       <td><a href="/update/{{cus.cus_id}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{cus.cus_id}}">Edit</a>
+                          <a href="/delete/{{cus.cus_id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure?')">Delete</a>
+                      </td>
+                   </tr>
+
+                  {% endfor %}
+
+               </tbody>
+              </table>
+
+            </div>
+
+          </div> 
+        </section>
+        
+   
+  
+
+{% endblock %}

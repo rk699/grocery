@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link  rel="stylesheet" href="../static/css/base.css">
+      {% block head %} {% endblock %}
+
+<!--    <link  rel="stylesheet" href="../static/css/contact.css">-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+
+  <body>
+  <!-- =========================================================================   Navbar    -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light  py-2 ">
+        <div class="container">
+          <a class="navbar-brand navbar-brandi" href="/">Sparkks</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="navbar-toggler-icon" ></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link nav-linki " aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-linki" href="/products">Store</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link nav-linki" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-linki" href="/about">About</a>
+              </li>
+            </ul>
+
+            <section class="px-2">
+              <span><i class="fa fa-facebook p-1"></i></span>
+              <span><i class="fa fa-instagram p-1"></i></span>
+              <span><i class="fa fa-twitter p-1"></i></span>
+              <span><i class="fa fa-google-plus p-1"></i></span>
+             </section>
+
+            <form class="d-flex">
+              <input class=" me-2 search" type=" search" placeholder="Search" aria-label="Search">
+              <button class="btn btn12" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  <!-- ========================================================================= end nav bar      -->
+  {% block body %} {% endblock %}
+
+  <!-- ========================================================================= footer     -->
+   <div class="mailpart pb-2">
+     <div class="container pt-3 text-center">
+       <div class="row">
+         <div class="col-lg-9 m-auto text-center">
+           <h2>Join Our Society</h2>
+           <input type="email" placeholder="Enter Your Email">
+           <button class="btn3" type="submit">Submit</button>
+         </div>
+       </div>
+       <div class="row pt-1 ">
+         <div class="col-lg-12 m-2 ">
+           <div class="row">
+                  <div class="col-lg-3 py-2 ">
+                    <h3 class="pb-1">About Us</h3>
+
+                    <p>Sparkks is India’s largest online food and grocery store. With multiple brands in our catalogue you will find everything you are looking for.</p>
+                  </div>
+                  <div class="col-lg-3 py-2">
+                    <h3 class="pb-1">Partners</h3>
+                    <p>Ramya Shree</p>
+                    <p>Kriti</p>
+                    <p>Subranshu</p>
+                    <p>Kamlesh</p>
+                    <p>Sibo</p>
+                    <p>Purusottam</p>
+                    <p>Akash</p>
+                  </div>
+                  <div class="col-lg-3 py-2">
+                    <h3 class="pb-1">Company</h3>
+                    <a href="/"><p>Home</p></a>
+                    <a href="/products"> <p>Store</p> </a>                    
+                    <a href="/contact"><p>Contact</p></a>
+                    <a href="/about"><p>About Us</p></a>
+                  </div>
+                  <div class="col-lg-3 py-2">
+                    <h3 class="pb-1">Social Links</h3>
+                   <a href="#"><span><i class="fa fa-facebook p-2"></i></span></a>
+                   <a href="#"><span><i class="fa fa-instagram p-2"></i></span></a>
+                   <a href="#"><span><i class="fa fa-twitter p-2"></i></span></a>
+                   <a href="#"> <span><i class="fa fa-google-plus p-2"></i></span></a>
+
+
+                  </div>
+           </div>
+         </div>
+       </div>
+       </div>
+       <hr>
+       <p class="text-center pb-1">Copyright © 2020 Sparkks PVT Limited | All rights reserved | Made by Sparkks members
+        </p>
+   </div>
+  <!-- ========================================================================= footerends     -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>  -->
+
+  </body>
+</html>

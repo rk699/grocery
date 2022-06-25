@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<link rel="stylesheet" href="../static/css/product.css">
+{% endblock %}
+
+
+{% block body %}
+
+<section class="main">
+    <div class="container">
+         <div class="row pt-4 m-auto text-center">            
+            <div class="col-md-2" style="background-color: white !important;">
+               <h4 class="">Categories</h4>
+               <div id="orange"><span class="fa fa-minus"></span></div>
+               <div class="row">
+                 <div class="col-md-12">
+                                  
+                    
+                    <form>
+                        <div class="form-group"> <label for="artisan">Fruits</label> </div>
+                        <div class="form-group">  <label for="breakfast">Vegetables</label> </div>
+                        <div class="form-group"> <label for="healthy">Beverages</label> </div>
+                        <div class="form-group"> <label for="artisan">Bread/Bakery</label> </div>
+                        <div class="form-group">  <label for="breakfast">Dairy Iems</label> </div>
+                        <div class="form-group"> <label for="healthy">Cleaners</label> </div>
+                        <div class="form-group"> <label for="healthy">Frozen Foods</label> </div>
+                        <div class="form-group"> <label for="healthy">Snacks</label> </div>
+                        <div class="form-group"> <label for="healthy">Oils</label> </div>
+                        <div class="form-group"> <label for="healthy">Spices</label> </div>
+                        <div class="form-group"> <label for="healthy">Cereal</label> </div>
+                    </form>
+                
+                 </div>
+               </div>
+            </div>
+
+            
+            <div class="col-md-10" >
+              <div class="container mt-5 mb-5">
+
+
+                  {% for product in products %}
+
+                <div  class="d-flex mt-2 justify-content-center row">
+                    <div class="col-md-10">                  
+                        <div class="row p-2 bg-white border rounded">
+
+                            <div class="col-md-3 mt-1">
+                              <img class="img-fluid img-responsive rounded product-image" src="../static/img/contact.jpg">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <h4>{{product.product_name}}</h4>
+                                <div class="d-flex flex-row text-center justify-content-center">
+                                    <div class="ratings mr-2">
+                                      <i class="fa fa-star"></i>
+                                      <i class="fa fa-star"></i>
+                                      <i class="fa fa-star"></i>
+                                      <i class="fa fa-star"></i>
+                                      <i class="fa fa-star"></i>
+                                    </div>
+                                </div>                               
+                              
+                                <h5 class="text-justify mt-4  para mb-0">
+                                 {{product.product_desp[0:40]}}<br> </h5>
+                                 <label class="radio">
+                                  <div style="margin-top: 4px;"> <span>{{product.product_qty}}</span></div> 
+                               </label> 
+                               
+                            </div>
+                            <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <h4 class="mr-1" style="color:red;">Rs</h4> <h4></h4><span style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-left: 7px;
+                                    font-size: 26px; "> {{product.product_price}}</span></h4>
+<!--                                    <span class="strike-text">Rs 20.99</span>-->
+                                </div>
+                                <h6 class="text-success">Free shipping</h6>
+                                <div class="d-flex flex-column mt-4">
+                                    <a href="/products/{{product.product_id}}" class="btn btn-primary btn-sm" type="button">Details</a>
+                                    <a href="" class="btn btn-outline-primary btn-sm mt-2" type="button">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+
+                  {% endfor %}
+
+
+
+                 </div>                       
+        
+              </div>
+            </div>
+
+
+        </div>
+</section>
+
+{% endblock %}
+        <!-- <div class="row">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#">
+                            <div class="card my-2 mx-1">
+                                     <img class="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" alt="Vans">
+                                     <div class="card-img-overlay d-flex justify-content-end">
+                                       <a href="#" class="card-link text-danger like">
+                                         <i class="fa fa-heart"></i>
+                                       </a>
+                                     </div>
+                                    <h4 class="card-title">Masalas</h4> 
+                             </div>
+                        </a>
+                    </div>
+                </div> -->

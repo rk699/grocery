@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+
+
+   {% block head %}
+<link  rel="stylesheet" href="../static/css/contact.css">
+
+ {% endblock %}
+
+
+
+{% block body %}
+
+      <div class="container pt-2">
+          <h1 class=" m-auto pt-1 text-center">Contact Us</h1>
+          <hr style="color: rgb(248, 26, 92);">
+      </div>
+
+<!-- ====================================================================== -->
+<div class="container-fluid rounded">
+    <div class="row ">
+        <div class="col-sm-6 pt-2">
+            <div>
+                <h3 class="text-dark">Get a quote</h3>
+                <h5 class="text-dark">Fill up the form and our Team will get back to you within in 24 hours</h5>
+            </div>
+            <div class="links" id="bordering">
+                 <a href="#" class="btn rounded text-white p-3"><i class="fa fa-phone icon text-dark pr-3"></i>+0123 4567 8910</a>
+                 <a href="#" class="btn rounded text-white p-3"><i class="fa fa-envelope icon text-dark pr-3" ></i>hello@flowbase.com</a> 
+                 <a href="#" class="btn rounded text-white p-3"><i class="fa fa-map-marker icon text-dark pr-3"></i>102 street 2714 Don</a> </div>
+            <div class="pt-lg-4 d-flex flex-row justify-content-start">
+                <a href="#"><span><i class="text-dark fa fa-facebook p-2"></i></span></a>
+                <a href="#"><span><i class="text-dark fa fa-instagram p-2"></i></span></a>
+                <a href="#"><span><i class="text-dark fa fa-twitter p-2"></i></span></a>
+                <a href="#"><span><i class="text-dark fa fa-google-plus p-2"></i></span></a>
+
+            </div>
+        </div>
+        <div class="col-sm-6 pad">
+            <form class="rounded msg-form" action="/contact" method="POST">
+
+                <div class="form-group"> <label for="name" class="h6">Your Name</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1">
+                            <p class="fa fa-user-o text-dark"></p>
+                        </div> <input type="text" name="cname" class="form-control border-0">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="name" class="h6">Email</label>
+                    <div class="input-group border rounded">
+                        <div class="input-group-addon px-2 pt-1"> <i class="fa fa-envelope text-dark"></i> </div>
+                         <input type="text" name="cemail" class="form-control border-0">
+                    </div>
+                </div>
+                <div class="form-group"> <label for="msg" class="h6">Message</label> <textarea name="cdesp" id="msgus" cols="10" rows="5" class="form-control bg-light" placeholder="Message"></textarea> </div>
+                <div class="form-group d-flex justify-content-end"> <input type="submit" class="btn1 " value="Send"> </div>
+            </form>
+        </div>
+    </div>
+</div>
+ {% endblock %}
+
