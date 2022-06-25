@@ -1,2 +1,2 @@
 # grocery
-grocery store made with flask framewok
+grocery store made with flask framework
